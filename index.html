@@ -21,81 +21,112 @@
             position: relative;
         }
 
+        /* Líneas animadas futuristas */
+        .background-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .line {
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: white;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5); /* Glow */
+            animation: moveLines 5s linear infinite;
+        }
+
+        @keyframes moveLines {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        /* Generar líneas con diferentes posiciones y velocidades */
+        .line:nth-child(1) { left: 10%; animation-duration: 4s; }
+        .line:nth-child(2) { left: 20%; animation-duration: 6s; }
+        .line:nth-child(3) { left: 30%; animation-duration: 5s; }
+        .line:nth-child(4) { left: 40%; animation-duration: 7s; }
+        .line:nth-child(5) { left: 50%; animation-duration: 4.5s; }
+        .line:nth-child(6) { left: 60%; animation-duration: 6.5s; }
+        .line:nth-child(7) { left: 70%; animation-duration: 5.5s; }
+        .line:nth-child(8) { left: 80%; animation-duration: 7.5s; }
+        .line:nth-child(9) { left: 90%; animation-duration: 4.2s; }
+
         /* Círculos flotantes */
         .floating-circle {
             position: absolute;
             border-radius: 50%;
-            background: rgba(0, 255, 0, 0.3); /* Verde translúcido más brillante */
-            box-shadow: 0 0 80px rgba(0, 255, 0, 0.8); /* Glow verde más intenso */
-            filter: blur(40px); /* Más borrosas */
-            animation: float 6s infinite ease-in-out; /* Animación más rápida */
+            background: rgba(0, 255, 0, 0.1); /* Verde translúcido */
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3); /* Glow verde */
+            animation: float 10s infinite ease-in-out;
         }
 
-        /* Configuración de las bolas */
         .floating-circle:nth-child(1) {
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
             top: 10%;
-            left: 10%;
-            animation-duration: 8s;
-            animation-delay: 0s;
+            left: 15%;
+            animation-duration: 12s;
         }
 
         .floating-circle:nth-child(2) {
-            width: 400px;
-            height: 400px;
-            top: 20%;
-            left: 60%;
-            animation-duration: 10s;
-            animation-delay: 1s;
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left: 70%;
+            animation-duration: 15s;
         }
 
         .floating-circle:nth-child(3) {
-            width: 250px;
-            height: 250px;
-            top: 70%;
-            left: 20%;
-            animation-duration: 7s;
-            animation-delay: 2s;
+            width: 150px;
+            height: 150px;
+            top: 80%;
+            left: 30%;
+            animation-duration: 18s;
         }
 
         .floating-circle:nth-child(4) {
-            width: 350px;
-            height: 350px;
-            top: 50%;
-            left: 80%;
-            animation-duration: 9s;
-            animation-delay: 1.5s;
+            width: 250px;
+            height: 250px;
+            top: 20%;
+            left: 50%;
+            animation-duration: 14s;
         }
 
         .floating-circle:nth-child(5) {
-            width: 300px;
-            height: 300px;
-            top: 30%;
-            left: 40%;
-            animation-duration: 8s;
-            animation-delay: 2.5s;
+            width: 180px;
+            height: 180px;
+            top: 70%;
+            left: 10%;
+            animation-duration: 16s;
         }
 
         .floating-circle:nth-child(6) {
-            width: 350px;
-            height: 350px;
-            top: 60%;
-            left: 10%;
-            animation-duration: 11s;
-            animation-delay: 3s;
+            width: 220px;
+            height: 220px;
+            top: 40%;
+            left: 80%;
+            animation-duration: 20s;
         }
 
-        /* Animación de movimiento */
         @keyframes float {
             0% {
-                transform: translate(0, 0);
+                transform: translateY(0) translateX(0);
             }
             50% {
-                transform: translate(50px, -50px);
+                transform: translateY(-20px) translateX(10px);
             }
             100% {
-                transform: translate(0, 0);
+                transform: translateY(0) translateX(0);
             }
         }
 
@@ -168,9 +199,33 @@
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 255, 0, 0.3); /* Glow verde */
         }
+
+        /* Ícono de la bandera */
+        .flag {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 255, 0, 0.3); /* Glow verde */
+        }
     </style>
 </head>
 <body>
+    <!-- Líneas animadas futuristas -->
+    <div class="background-lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
     <!-- Círculos flotantes -->
     <div class="floating-circle"></div>
     <div class="floating-circle"></div>
@@ -178,6 +233,9 @@
     <div class="floating-circle"></div>
     <div class="floating-circle"></div>
     <div class="floating-circle"></div>
+
+    <!-- Bandera de Uruguay -->
+    <img src="https://flagcdn.com/w40/uy.png" alt="Bandera de Uruguay" class="flag">
 
     <!-- Reloj funcional -->
     <div class="clock" id="clock"></div>

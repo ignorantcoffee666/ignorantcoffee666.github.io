@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> <!-- Deshabilitar zoom -->
     <title>Mi Presentación</title>
     <!-- Tipografía personalizada -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -189,8 +189,8 @@
         /* Reloj */
         .clock {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 2vh;
+            right: 2vw;
             font-size: 1.5rem;
             color: #00ff00; /* Verde brillante */
             font-weight: 600;
@@ -203,10 +203,11 @@
         /* Ícono de la bandera */
         .flag {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 40px;
-            height: 40px;
+            top: 2vh; /* Usar unidades relativas para adaptarse a pantallas pequeñas */
+            left: 2vw;
+            width: 8vw; /* Tamaño relativo para que se ajuste a cualquier pantalla */
+            max-width: 40px; /* Tamaño máximo para pantallas grandes */
+            height: auto;
             border-radius: 5px;
             box-shadow: 0 4px 10px rgba(0, 255, 0, 0.3); /* Glow verde */
         }

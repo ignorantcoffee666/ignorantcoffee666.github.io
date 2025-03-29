@@ -6,6 +6,12 @@
     <title>Mi Presentación</title>
     <!-- Tipografía personalizada -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+        // Detectar si el usuario está en un dispositivo móvil
+        if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            window.location.href = "mobile.html"; // Redirigir a la versión móvil
+        }
+    </script>
     <style>
         body {
             font-family: 'Poppins', sans-serif;

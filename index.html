@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Presentación</title>
+    <!-- Tipografía personalizada -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000000; /* Fondo completamente negro */
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Líneas animadas futuristas */
+        .background-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .line {
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: white;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5); /* Glow */
+            animation: moveLines 5s linear infinite;
+        }
+
+        @keyframes moveLines {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        /* Generar líneas con diferentes posiciones y velocidades */
+        .line:nth-child(1) { left: 10%; animation-duration: 4s; }
+        .line:nth-child(2) { left: 20%; animation-duration: 6s; }
+        .line:nth-child(3) { left: 30%; animation-duration: 5s; }
+        .line:nth-child(4) { left: 40%; animation-duration: 7s; }
+        .line:nth-child(5) { left: 50%; animation-duration: 4.5s; }
+        .line:nth-child(6) { left: 60%; animation-duration: 6.5s; }
+        .line:nth-child(7) { left: 70%; animation-duration: 5.5s; }
+        .line:nth-child(8) { left: 80%; animation-duration: 7.5s; }
+        .line:nth-child(9) { left: 90%; animation-duration: 4.2s; }
+
+        /* Círculos flotantes */
+        .floating-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 255, 0, 0.1); /* Verde translúcido */
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3); /* Glow verde */
+            animation: float 10s infinite ease-in-out;
+        }
+
+        .floating-circle:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 15%;
+            animation-duration: 12s;
+        }
+
+        .floating-circle:nth-child(2) {
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left: 70%;
+            animation-duration: 15s;
+        }
+
+        .floating-circle:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            top: 80%;
+            left: 30%;
+            animation-duration: 18s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-20px) translateX(10px);
+            }
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.9); /* Fondo negro translúcido */
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 255, 0, 0.3); /* Glow verde */
+            padding: 40px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            z-index: 2; /* Asegura que el contenido esté encima de los círculos */
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 10px rgba(0, 255, 0, 0.3); /* Glow verde */
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin: 10px 0;
+            color: #00ff00; /* Verde brillante */
+        }
+
+        p {
+            font-size: 1rem;
+            color: #aaa;
+            margin: 10px 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #00ff00; /* Botón verde */
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 255, 0, 0.3); /* Glow verde */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #00cc00; /* Oscurecer el verde al pasar el ratón */
+            transform: translateY(-2px);
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        /* Reloj */
+        .clock {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: #00ff00; /* Verde brillante */
+            font-weight: 600;
+            background: rgba(0, 0, 0, 0.8); /* Fondo negro translúcido */
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 255, 0, 0.3); /* Glow verde */
+        }
+    </style>
+</head>
+<body>
+    <!-- Líneas animadas futuristas -->
+    <div class="background-lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <!-- Círculos flotantes -->
+    <div class="floating-circle"></div>
+    <div class="floating-circle"></div>
+    <div class="floating-circle"></div>
+
+    <!-- Reloj funcional -->
+    <div class="clock" id="clock"></div>
+
+    <!-- Contenido principal -->
+    <div class="card">
+        <img src="profile.jpg" alt="Foto de perfil" class="profile-pic">
+        <h1>ignorantcoffee666</h1>
+        <p>No sé qué hacer.</p>
+        <a href="https://github.com/ignorantcoffee666" target="_blank" class="btn">Ver mi GitHub</a>
+        <footer>© 2025 ignorantcoffee666. Todos los derechos reservados.</footer>
+    </div>
+
+    <script>
+        // Función para actualizar el reloj
+        function updateClock() {
+            const clock = document.getElementById('clock');
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            clock.textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        // Actualizar el reloj cada segundo
+        setInterval(updateClock, 1000);
+        updateClock(); // Llamar inmediatamente para mostrar la hora al cargar
+    </script>
+</body>
+</html>
